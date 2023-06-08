@@ -2,3 +2,14 @@
 .Rhistory
 .RData
 .Ruserdata
+
+
+.httr-oauth
+.DS_Store
+
+/data
+/data_in
+/data_out
+/SS
+
+Philleigh_*

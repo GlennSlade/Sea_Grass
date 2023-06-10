@@ -51,6 +51,13 @@ RENDVI = (RE - Red)/(RE + Red)
 #plot (RENDVI)
 writeRaster(RENDVI,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_30m/Philleigh_30m_RENDVI.tif", overwrite=TRUE)
 
+#MSAVI2
+
+MSAVI2 =  (2 * NIR + 1 - sqrt( (2 * NIR + 1)^2 - 8 * (NIR - Red) )) / 2 
+
+writeRaster(MSAVI2,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_30m/Philleigh_30m_MSAVI2.tif", overwrite=TRUE)
+
+
 #writeRaster(Philleigh_30m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_30m/Philleigh_30m_Refl_Stack.tif")
 writeRaster(Philleigh_30m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_30m/Philleigh_30m_Refl_Stack.tif", overwrite=TRUE)
 
@@ -88,6 +95,16 @@ RENDVI = (RE - Red)/(RE + Red)
 
 #plot (RENDVI)
 writeRaster(RENDVI,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_RENDVI.tif", overwrite=TRUE)
+
+#MSAVI2
+
+MSAVI2 =  (2 * NIR + 1 - sqrt( (2 * NIR + 1)^2 - 8 * (NIR - Red) )) / 2 
+
+writeRaster(MSAVI2,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_MSAVI2.tif", overwrite=TRUE)
+
+
+
+
 
 #writeRaster(Philleigh_50m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_30m/Philleigh_50m_Refl_Stack.tif")
 writeRaster(Philleigh_50m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_Refl_Stack.tif", overwrite=TRUE)
@@ -127,5 +144,14 @@ RENDVI = (RE - Red)/(RE + Red)
 #plot (RENDVI)
 writeRaster(RENDVI,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_95m/Philleigh_95m_RENDVI.tif", overwrite=TRUE)
 
+#MSAVI2
+
+MSAVI2 =  (2 * NIR + 1 - sqrt( (2 * NIR + 1)^2 - 8 * (NIR - Red) )) / 2 
+
+writeRaster(MSAVI2,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_95m/Philleigh_95m_MSAVI2.tif", overwrite=TRUE)
+
+
 #writeRaster(Philleigh_95m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_30m/Philleigh_95m_Refl_Stack.tif")
 writeRaster(Philleigh_95m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_95m/Philleigh_95m_Refl_Stack.tif", overwrite=TRUE)
+
+

@@ -102,7 +102,24 @@ MSAVI2 =  (2 * NIR + 1 - sqrt( (2 * NIR + 1)^2 - 8 * (NIR - Red) )) / 2
 
 writeRaster(MSAVI2,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_MSAVI2.tif", overwrite=TRUE)
 
+aoi_terra <- vect("E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_clip.shp")
 
+# cropping to study area (no vegetation)
+MSAVI2_crop <- crop(MSAVI2, aoi_terra)
+MSAVI2_mask <- mask(MSAVI2_crop, aoi_terra)
+writeRaster(MSAVI2_mask,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_MSAVI2_crop.tif", overwrite=TRUE)
+
+NDVI_crop <- crop(NDVI, aoi_terra)
+NDVI_mask <- mask(NDVI_crop, aoi_terra)
+writeRaster(NDVI_mask,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_NDVI_crop.tif", overwrite=TRUE)
+
+RENDVI_crop <- crop(RENDVI, aoi_terra)
+RENDVI_mask <- mask(RENDVI_crop, aoi_terra)
+writeRaster(RENDVI_mask,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_RENDVI_crop.tif", overwrite=TRUE)
+
+ReflStack_crop <- crop(Philleigh_50m_ReflStack, aoi_terra)
+ReflStack_mask <- mask(ReflStack_crop, aoi_terra)
+writeRaster(ReflStack_mask,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_ReflStack_crop.tif", overwrite=TRUE)
 
 
 

@@ -4,25 +4,25 @@ invisible(lapply(list.files("R", full.names = TRUE, recursive = TRUE), source))
 library(stringr)
 library(openxlsx)
 
-site_name = "Struizendam_2"
+site_name = "Philleigh_50m"
 
 #============ Data Prep =====================
 
-x <- build_cube(site_name = "Struizendam_2")
+x <- build_cube(site_name = "Philleigh_50m")
 
-# x <- rast("data_out/Struizendam_2/Struizendam_2_stack.tif") #access the intermediate layer
+# x <- rast("data_out/Philleigh_50m/Philleigh_50m_stack.tif") #access the intermediate layer
 
 v <- build_ml_df(cube = x,
-                 site_name = "Struizendam_2",
+                 site_name = "Philleigh_50m",
                  df_type="grid")
 
-v <- "data_out/Struizendam_2/Struizendam_2ML_in_grid_level.rds"
+v <- "data_out/Philleigh_50m/Philleigh_50mML_in_grid_level.rds"
 
 
 #================ ML pipeline ================
 # Auto ML ------------------
 
-task <- build_task(v, site_name="Struizendam_2")
+task <- build_task(v, site_name="Philleigh_50m")
 
 tune_spcv <- mlr3::rsmp("spcv_coords", folds = 20)
 
@@ -195,7 +195,7 @@ p3
 tic()
 mod.pred <- predict_terra_tile(x,
                                mod= svm_tune$tun_inst$learner,
-                               site_name="Struizendam_2",
+                               site_name="Philleigh_50m",
                                .workers=1, tile=TRUE, tile_dims = 5)
 toc()
 # quick n dirt map.

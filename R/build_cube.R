@@ -26,17 +26,17 @@ build_cube <- function(site_name, data_dir="data_in",
   
   # load and rename MS stack
   MS_CHM_stack <- rast(file.path(base_dir, 
-                                 paste0(site_name, "_Refl_StackCrop_CHM.tif")))
+                                 paste0(site_name, "_ReflStack_crop.tif")))
   
-  names(MS_CHM_stack) <- c("blue", "green", "red", "red_edge", "nir", "dsm")
+  names(MS_CHM_stack) <- c("blue", "green", "red", "red_edge", "nir")
   
   # load, rename and stack spectral indices
-  add_band_names <- c("MSAVI", "MSAVI2", "MTVI", "NDVI", "SAVI")
+  add_band_names <- c( "MSAVI2", "NDVI", "RENDVI")
   
   add_band_paths <- purrr::map(add_band_names,
              function(x){
                file.path(base_dir, 
-                         paste0(site_name, "_", x, ".tif"))
+                         paste0(site_name, "_", x, "_crop.tif"))
              })
 
   

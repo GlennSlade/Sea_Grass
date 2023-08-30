@@ -49,3 +49,32 @@ probs <- mesma(stack, end_spectra_DF, method = "NNLS")
 #----4. Write unmixed raster brick
 
 writeRaster(probs,"data_out/Philleigh_50m_unmixed.tif", overwrite=TRUE)
+
+
+B1 <-probs$layer.1 #algae 1
+B2<- probs$layer.2 #sea grass
+B3<- probs$layer.3#sed
+B4<- probs$layer.4#Algae 2
+B5<- probs$layer.5#sed2
+B6<- probs$layer.6#sed3
+B7<- probs$layer.7#water
+# Write individual layers and consolidate multilayer classes
+Algae <- B1+B4
+Sediment<- B3+B5+B6
+
+writeRaster(Algae,"data_out/Philleigh_50m_mesam_algae.tif", overwrite=TRUE)
+writeRaster(Sediment,"data_out/Philleigh_50m_mesam_sediment.tif", overwrite=TRUE)
+writeRaster(B2,"data_out/Philleigh_50m_mesam_SG.tif", overwrite=TRUE)
+writeRaster(B7,"data_out/Philleigh_50m_mesam_water.tif", overwrite=TRUE)
+
+
+
+
+
+
+
+
+
+
+
+

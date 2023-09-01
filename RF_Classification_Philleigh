@@ -69,7 +69,7 @@ n_cores = -1
 survey = "Philleigh"
 
 # the input remote sensing image you want to classify
-img_RS = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_in\\Philleigh_50m\\Philleigh_50m_Refl_Stack2.tif'
+img_RS = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_in\\Philleigh_95m\\Philleigh_95m_Refl_Stack2.tif'
 
 # the input training shape file
 training = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_in\\train_points_poly.shp'
@@ -79,19 +79,19 @@ validation = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_in\\val_points_po
 attribute = 'Type'
 
 # output filename and directory where the classification image should be saved:
-classification_image = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh.tif'
+classification_image = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh_95_2.tif'
 
 # Output Main accuracy results saved to:
-results_txt = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh.txt'
+results_txt = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh95.txt'
 
 # Output band importance saved to:
-importance_txt = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh_Importance.txt'
+importance_txt = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh95_Importance.txt'
 
 # Output Summary Precision, F1 scores saved to:
-sum_txt = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh_Summary.txt'
+sum_txt = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh95_Summary.txt'
 
 # Output Confusion Matrix saved to:
-savename = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh_conf_matrix' + '.csv'
+savename = 'E:\\Glenn\\Philleigh\\R_Scripts\\Sea_Grass\\data_out\\RF_Philleigh95_conf_matrix' + '.csv'
 
 
 # In[4]:

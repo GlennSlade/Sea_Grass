@@ -13,6 +13,7 @@ library(gridExtra)
 library(DescTools)
 library(sf)
 library(exactextractr)
+library(tidyterra)
 library(writexl) 
 
 #Philleigh 30m  stack
@@ -72,10 +73,18 @@ Philleigh_50m_Green_Refl <-  rast("E:/Glenn/Philleigh/Processed/Philleigh_50m/4_
 Philleigh_50m_Red_Refl <-  rast("E:/Glenn/Philleigh/Processed/Philleigh_50m/4_index/reflectance/Philleigh_50m_transparent_reflectance_Red.tif")
 Philleigh_50m_RedEdge_Refl <-  rast("E:/Glenn/Philleigh/Processed/Philleigh_50m/4_index/reflectance/Philleigh_50m_transparent_reflectance_Red edge.tif")
 Philleigh_50m_NIR_Refl <-  rast("E:/Glenn/Philleigh/Processed/Philleigh_50m/4_index/reflectance/Philleigh_50m_transparent_reflectance_NIR.tif")
+Philleigh_50m_NDVI <-  rast("E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_NDVI.tif")
+
+Philleigh_50m_NDVI
+
+Philleigh_50m_NDVI <- Philleigh_50m_NDVI %>% rename (NDVI = Philleigh_50m_transparent_reflectance_nir)
+Philleigh_50m_NDVI
+
+
 
 #make stack
 
-Philleigh_50m_ReflStack <- c(Philleigh_50m_Blue_Refl,Philleigh_50m_Green_Refl,Philleigh_50m_Red_Refl,Philleigh_50m_RedEdge_Refl,Philleigh_50m_NIR_Refl) 
+Philleigh_50m_ReflStack2 <- c(Philleigh_50m_Blue_Refl,Philleigh_50m_Green_Refl,Philleigh_50m_Red_Refl,Philleigh_50m_RedEdge_Refl,Philleigh_50m_NIR_Refl,Philleigh_50m_NDVI) 
 
 Blue = Philleigh_50m_Blue_Refl 
 Green =Philleigh_50m_Green_Refl 
@@ -125,6 +134,7 @@ writeRaster(ReflStack_mask,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Phill
 
 #writeRaster(Philleigh_50m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_30m/Philleigh_50m_Refl_Stack.tif")
 writeRaster(Philleigh_50m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_Refl_Stack.tif", overwrite=TRUE)
+writeRaster(Philleigh_50m_ReflStack2,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_50m/Philleigh_50m_Refl_Stack2.tif", overwrite=TRUE)
 
 #Philleigh 95m  stack
 
@@ -138,10 +148,21 @@ Philleigh_95m_Red_Refl <-  rast("E:/Glenn/Philleigh/Processed/Philleigh_95m/4_in
 Philleigh_95m_RedEdge_Refl <-  rast("E:/Glenn/Philleigh/Processed/Philleigh_95m/4_index/reflectance/Philleigh_95m_transparent_reflectance_Red edge.tif")
 Philleigh_95m_NIR_Refl <-  rast("E:/Glenn/Philleigh/Processed/Philleigh_95m/4_index/reflectance/Philleigh_95m_transparent_reflectance_NIR.tif")
 
+#NDVI
+NDVI = (NIR - Red)/(NIR + Red)
+
+#plot (NDVI)
+writeRaster(NDVI,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_95m/Philleigh_95m_NDVI.tif", overwrite=TRUE)
+
+
+Philleigh_95m_NDVI <-  rast("E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_95m/Philleigh_95m_NDVI.tif")
+Philleigh_95m_NDVI %>% rename(NDVI = Philleigh_95m_transparent_reflectance_nir)
+
 #make stack
 
 Philleigh_95m_ReflStack <- c(Philleigh_95m_Blue_Refl,Philleigh_95m_Green_Refl,Philleigh_95m_Red_Refl,Philleigh_95m_RedEdge_Refl,Philleigh_95m_NIR_Refl) 
-
+Philleigh_95m_ReflStack2 <- c(Philleigh_95m_Blue_Refl,Philleigh_95m_Green_Refl,Philleigh_95m_Red_Refl,Philleigh_95m_RedEdge_Refl,Philleigh_95m_NIR_Refl,Philleigh_95m_NDVI ) 
+Philleigh_95m_ReflStack2
 Blue = Philleigh_95m_Blue_Refl 
 Green =Philleigh_95m_Green_Refl 
 Red = Philleigh_95m_Red_Refl   
@@ -170,5 +191,6 @@ writeRaster(MSAVI2,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_95m
 
 #writeRaster(Philleigh_95m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_30m/Philleigh_95m_Refl_Stack.tif")
 writeRaster(Philleigh_95m_ReflStack,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_95m/Philleigh_95m_Refl_Stack.tif", overwrite=TRUE)
+writeRaster(Philleigh_95m_ReflStack2,"E:/Glenn/Philleigh/R_Scripts/Sea_Grass/data_in/Philleigh_95m/Philleigh_95m_Refl_Stack2.tif", overwrite=TRUE)
 
 

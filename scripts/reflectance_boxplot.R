@@ -64,9 +64,9 @@ str(REFL)
 #-----3.   Plotting Data -------
 # NDVI
 NDVIbp <- ggplot(data = REFL, mapping = aes (x=Type, y=NDVI, group = Type))+ geom_jitter(size=0.25)+ 
-  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1"
+  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1","blue"
                                                  ),outlier.shape = NA)
-NDVIbp2 <- NDVIbp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment" 
+NDVIbp2 <- NDVIbp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment","Water"
                                                                         ))
 NDVI_BP <- NDVIbp2 + ylab("Calibrated Reflectance NDVI") + ggtitle("Mean NDVI Extracted from Drone Image Data") + theme(plot.title = element_text(hjust = 0.5)) + stat_boxplot(geom = "errorbar", width = 0.5)+ theme_fancy()
 plot (NDVI_BP)
@@ -74,9 +74,9 @@ plot (NDVI_BP)
 # Blue
 
 Bluebp <- ggplot(data = REFL, mapping = aes (x=Type, y=Blue, group = Type))+ geom_jitter(size=0.25)+ 
-  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1"
+  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1","blue"
   ),outlier.shape = NA)
-Bluebp2 <- Bluebp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment" 
+Bluebp2 <- Bluebp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment","Water"
 ))
 Blue_BP <- Bluebp2 + ylab("Calibrated Reflectance Blue") + ggtitle("Mean Calibrated Reflectance Blue \n Band Extracted from Drone Image Data") + theme(plot.title = element_text(hjust = 0.5)) + stat_boxplot(geom = "errorbar", width = 0.5)+ theme_fancy()
 plot (Blue_BP)
@@ -84,9 +84,9 @@ plot (Blue_BP)
 # Green
 
 Greenbp <- ggplot(data = REFL, mapping = aes (x=Type, y=Green, group = Type))+ geom_jitter(size=0.25)+ 
-  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1"
+  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1","blue"
   ),outlier.shape = NA)
-Greenbp2 <- Greenbp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment" 
+Greenbp2 <- Greenbp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment","Water"
 ))
 Green_BP <- Greenbp2 + ylab("Calibrated Reflectance Green") + ggtitle("Mean Calibrated Reflectance Green \n Band Extracted from Drone Image Data") + theme(plot.title = element_text(hjust = 0.5)) + stat_boxplot(geom = "errorbar", width = 0.5)+ theme_fancy()
 plot (Green_BP)
@@ -95,9 +95,9 @@ plot (Green_BP)
 
 
 Redbp <- ggplot(data = REFL, mapping = aes (x=Type, y=Red, group = Type))+ geom_jitter(size=0.25)+ 
-  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1"
+  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1","blue"
   ),outlier.shape = NA)
-Redbp2 <- Redbp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment" 
+Redbp2 <- Redbp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment","Water"
 ))
 Red_BP <- Redbp2 + ylab("Calibrated Reflectance Red") + ggtitle("Mean Calibrated Reflectance Red \n Band Extracted from Drone Image Data") + theme(plot.title = element_text(hjust = 0.5)) + stat_boxplot(geom = "errorbar", width = 0.5)+ theme_fancy()
 plot (Red_BP)
@@ -106,9 +106,9 @@ plot (Red_BP)
 
 # Red Edge
 RedEdgebp <- ggplot(data = REFL, mapping = aes (x=Type, y=RedEdge, group = Type))+ geom_jitter(size=0.25)+ 
-  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1"
+  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1","blue"
   ),outlier.shape = NA)
-RedEdgebp2 <- RedEdgebp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment" 
+RedEdgebp2 <- RedEdgebp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment","Water"
 ))
 RedEdge_BP <- RedEdgebp2 + ylab("Calibrated Reflectance RedEdge") + ggtitle("Mean Calibrated Reflectance RedEdge \n Band Extracted from Drone Image Data") + theme(plot.title = element_text(hjust = 0.5)) + stat_boxplot(geom = "errorbar", width = 0.5)+ theme_fancy()
 plot (RedEdge_BP)
@@ -116,9 +116,9 @@ plot (RedEdge_BP)
 
 # NIR
 NIRbp <- ggplot(data = REFL, mapping = aes (x=Type, y=NIR, group = Type))+ geom_jitter(size=0.25)+ 
-  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1"
+  xlab("Land Cover Class") + stat_boxplot(fill=c("mediumorchid2","green","burlywood1","blue"
   ),outlier.shape = NA)
-NIRbp2 <- NIRbp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment" 
+NIRbp2 <- NIRbp + scale_x_discrete(limits= c(1,2,3,4,5,6), labels = c("Dwarf Sea Grass", "Algae", "Sediment","Water"
 ))
 NIR_BP <- NIRbp2 + ylab("Calibrated Reflectance NIR") + ggtitle("Mean Calibrated Reflectance NIR \n Band Extracted from Drone Image Data") + theme(plot.title = element_text(hjust = 0.5)) + stat_boxplot(geom = "errorbar", width = 0.5)+ theme_fancy()
 plot (NIR_BP)
